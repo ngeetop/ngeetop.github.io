@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
+  <title>NGEE.TOP — Domains, Hosting & Dev Tools</title>
+  <meta name="description" content="A developer platform for domains & hosting, tools, and community. Launch projects faster with Tools Of Productivity." />
+  <meta name="theme-color" content="#0B1220" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="NGEE.TOP — Domains, Hosting & Dev Tools" />
+  <meta property="og:description" content="A developer platform for domains & hosting, tools, and community. Launch projects faster with Tools Of Productivity." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://ngee.top/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NGEE.TOP — Domains, Hosting & Dev Tools" />
+  <meta name="twitter:description" content="A developer platform for domains & hosting, tools, and community. Launch faster, scale smarter, build together." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN + theme tokens -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0B1220',
+            surface: '#0F172A',
+            border: '#1E293B',
+            txt: '#E2E8F0',
+            'txt-dim': '#94A3B8',
+            pri: '#22C55E',
+            'pri-hover': '#16A34A',
+            acc: '#F59E0B',
+            info: '#38BDF8',
+            danger: '#EF4444'
+          },
+          boxShadow: {
+            glow: '0 0 0 2px rgba(34,197,94,0.14), 0 12px 64px rgba(34,197,94,0.10)'
+          },
+          backgroundImage: {
+            'hero-grid':
+              'radial-gradient(1200px 600px at 70% -10%, rgba(34,197,94,0.10) 0%, rgba(34,197,94,0.00) 60%), radial-gradient(900px 500px at -10% 20%, rgba(56,189,248,0.10) 0%, rgba(56,189,248,0.00) 60%)'
+          },
+          borderRadius: { '2lg': '14px' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root { color-scheme: dark; }
+    html, body { background: #0B1220; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: #E2E8F0; }
+    .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+  </style>
+</head>
+<body class="bg-bg text-txt antialiased selection:bg-pri/20 selection:text-txt">
+
+  <!-- ===== Top Nav ===== -->
+  <header class="sticky top-0 z-40 border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
+    <div class="mx-auto max-w-7xl px-4 py-3">
+      <div class="flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3 group">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-surface ring-1 ring-border relative">
+            <!-- Minimal engine/gear mark -->
+            <svg viewBox="0 0 24 24" class="h-5 w-5 text-pri transition-transform group-hover:rotate-6" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 8.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Z"/>
+              <path d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+            </svg>
+          </span>
+          <div class="leading-5">
+            <div class="mono text-[0.9rem] font-bold tracking-tight">NGEE.TOP</div>
+            <div class="text-xs text-txt-dim">Tools Of Productivity</div>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#domains" class="text-txt-dim hover:text-txt transition">Domains</a>
+          <a href="#hosting" class="text-txt-dim hover:text-txt transition">Hosting</a>
+          <a href="#tools" class="text-txt-dim hover:text-txt transition">Tools</a>
+          <a href="#projects" class="text-txt-dim hover:text-txt transition">Projects</a>
+          <a href="#community" class="text-txt-dim hover:text-txt transition">Community</a>
+          <a href="#docs" class="text-txt-dim hover:text-txt transition">Docs</a>
+          <a href="#status" class="text-txt-dim hover:text-txt transition">Status</a>
+          <a href="about.html" class="text-txt-dim hover:text-txt transition">About</a>
+          <a href="contact.html" class="text-txt-dim hover:text-txt transition">Contact</a>
+          <a href="#cta" class="inline-flex items-center gap-2 rounded-xl bg-pri px-4 py-2 text-sm font-semibold text-black hover:bg-pri-hover shadow-glow transition">
+            Get a Domain
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </nav>
+
+        <button class="md:hidden inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-3 py-2 text-sm">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-hero-grid pointer-events-none"></div>
+    <div class="mx-auto max-w-7xl px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-txt-dim">
+          <span class="h-2 w-2 rounded-full bg-pri/80"></span>
+          New-era General Engineering Engine · <span class="mono">TOP</span>
+        </span>
+        <h1 class="mt-6 text-4xl leading-tight font-semibold md:text-6xl">
+          Launch domains. Host fast. Build together.
+        </h1>
+        <p class="mt-4 text-lg text-txt-dim md:text-xl">
+          NGEE packages <span class="mono">Tools Of Productivity</span> to name, deploy, and grow your projects—from <b>domain registration</b> and <b>modern hosting</b>, to <b>templates & tools</b>, and an active <b>community</b>.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="#domains" class="inline-flex items-center justify-center gap-2 rounded-2lg bg-pri px-5 py-3 text-base font-semibold text-black hover:bg-pri-hover shadow-glow transition">
+            Get a Domain
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#hosting" class="inline-flex items-center justify-center gap-2 rounded-2lg border border-border bg-surface px-5 py-3 text-base">
+            Explore Hosting
+            <svg viewBox="0 0 24 24" class="h-5 w-5 text-txt-dim" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 12h8M8 8h8M8 16h8"/></svg>
+          </a>
+          <a href="#community" class="inline-flex items-center justify-center gap-2 rounded-2lg border border-border bg-surface px-5 py-3 text-base">
+            Join the Community
+            <svg viewBox="0 0 24 24" class="h-5 w-5 text-txt-dim" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-txt-dim mono">Engineering, accelerated.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Acronym line -->
+  <section aria-hidden="true" class="mx-auto max-w-7xl px-4">
+    <div class="rounded-2lg border border-border/60 bg-surface/40 px-4 py-3 text-center text-xs text-txt-dim">
+      NGEE = <span class="mono">New-era General Engineering Engine</span> · TOP = <span class="mono">Tools Of Productivity</span>
+    </div>
+  </section>
+
+  <!-- ===== Key Values ===== -->
+  <section id="features" class="mx-auto max-w-7xl px-4 py-16 md:py-24">
+    <div class="grid gap-8 md:grid-cols-4">
+      <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-pri/10 text-pri ring-1 ring-pri/20">
+          <!-- Domains -->
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+        </div>
+        <h3 class="mt-4 text-lg font-semibold">Dev-first Domains & Hosting</h3>
+        <p class="mt-2 text-sm text-txt-dim">Simple DNS, automatic SSL, fast deploys (Node/PHP/Static).</p>
+      </div>
+
+      <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-info/10 text-info ring-1 ring-info/20">
+          <!-- Tools -->
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 7l-9 9 3 3 9-9M14 7l3 3"/></svg>
+        </div>
+        <h3 class="mt-4 text-lg font-semibold">Tools & Templates</h3>
+        <p class="mt-2 text-sm text-txt-dim">Starters, utilities, and best-practice presets for quick setup.</p>
+      </div>
+
+      <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-acc/10 text-acc ring-1 ring-acc/20">
+          <!-- Projects -->
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16v10H4z"/><path d="M4 11h16"/></svg>
+        </div>
+        <h3 class="mt-4 text-lg font-semibold">Project Hub</h3>
+        <p class="mt-2 text-sm text-txt-dim">Showcase, live demos, and one-click deploy to NGEE hosting.</p>
+      </div>
+
+      <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-pri/10 text-pri ring-1 ring-pri/20">
+          <!-- Community -->
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 20v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/></svg>
+        </div>
+        <h3 class="mt-4 text-lg font-semibold">Community & Support</h3>
+        <p class="mt-2 text-sm text-txt-dim">Forums, events, and learning sessions that solve real problems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Domains ===== -->
+  <section id="domains" class="mx-auto max-w-7xl px-4 pb-6">
+    <div class="rounded-2lg border border-border bg-surface/60 p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl md:text-3xl font-semibold">Domains</h2>
+          <p class="mt-2 text-sm text-txt-dim">Search, register/transfer, and manage DNS with a developer-friendly control panel. Automatic SSL, sane defaults.</p>
+          <div class="mt-4 flex items-center gap-2 text-xs text-txt-dim">
+            <span class="rounded-full bg-border/40 px-2.5 py-1">DNS</span>
+            <span class="rounded-full bg-border/40 px-2.5 py-1">SSL</span>
+            <span class="rounded-full bg-border/40 px-2.5 py-1">WHOIS Privacy</span>
+          </div>
+        </div>
+        <div class="w-full md:w-[420px]">
+          <div class="rounded-2lg border border-border bg-[#0b1426] p-2">
+            <form action="#" onsubmit="return false" class="flex gap-2">
+              <input class="w-full bg-transparent outline-none px-3 py-2 text-sm placeholder:text-txt-dim" placeholder="Search a domain (e.g., myapp.ngee.top)" />
+              <button class="rounded-xl bg-pri px-4 py-2 text-sm font-semibold text-black hover:bg-pri-hover shadow-glow">Search</button>
+            </form>
+          </div>
+          <p class="mt-2 text-[12px] text-txt-dim">Example only — connect to <span class="mono">domains.ngee.top</span> later.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Hosting ===== -->
+  <section id="hosting" class="mx-auto max-w-7xl px-4 py-16 md:py-24">
+    <div class="flex items-end justify-between">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold">Hosting</h2>
+        <p class="mt-2 text-sm text-txt-dim max-w-2xl">Fast runtime for Node, PHP, or static sites. Git deploys, automatic SSL, logs & metrics coming soon.</p>
+      </div>
+      <a href="#cta" class="hidden md:inline-flex rounded-xl border border-border bg-surface px-4 py-2 text-sm hover:bg-surface/70">See plans</a>
+    </div>
+
+    <div class="mt-6 grid gap-5 md:grid-cols-3">
+      <!-- Static -->
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Static</h3>
+          <span class="mono text-xs text-txt-dim">HTML / SPA</span>
+        </div>
+        <p class="mt-2 text-sm text-txt-dim">CDN-backed, instant cache, auto SSL.</p>
+        <ul class="mt-3 space-y-1 text-sm text-txt-dim">
+          <li>• One-click deploy</li>
+          <li>• Custom domain & DNS</li>
+          <li>• Preview builds</li>
+        </ul>
+      </article>
+
+      <!-- Node -->
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Node</h3>
+          <span class="mono text-xs text-txt-dim">Runtime v20</span>
+        </div>
+        <p class="mt-2 text-sm text-txt-dim">PM2-style process, env vars, logs.</p>
+        <ul class="mt-3 space-y-1 text-sm text-txt-dim">
+          <li>• Git/webhook deploy</li>
+          <li>• Health checks</li>
+          <li>• Auto SSL</li>
+        </ul>
+      </article>
+
+      <!-- PHP -->
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">PHP</h3>
+          <span class="mono text-xs text-txt-dim">8.2 / 8.3</span>
+        </div>
+        <p class="mt-2 text-sm text-txt-dim">Composer ready, queue/cron helpers.</p>
+        <ul class="mt-3 space-y-1 text-sm text-txt-dim">
+          <li>• Git deploy</li>
+          <li>• Storage & backups</li>
+          <li>• Auto SSL</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Tools ===== -->
+  <section id="tools" class="mx-auto max-w-7xl px-4 pb-4 md:pb-10">
+    <div class="flex items-end justify-between">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold">Tools & Templates</h2>
+        <p class="mt-2 text-sm text-txt-dim max-w-2xl">Opinionated starters and utilities so you can set up in minutes, not hours.</p>
+      </div>
+      <a href="#cta" class="hidden md:inline-flex rounded-xl border border-border bg-surface px-4 py-2 text-sm hover:bg-surface/70">Browse all</a>
+    </div>
+
+    <div class="mt-6 grid gap-5 md:grid-cols-3">
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Web App Starter</h3>
+        </div>
+        <p class="mt-2 text-sm text-txt-dim">Vite + TS, lint/test preset, deploy config.</p>
+        <div class="mt-4 flex items-center gap-2">
+          <span class="rounded-full bg-pri/10 px-2.5 py-1 text-xs text-pri">TOP</span>
+          <span class="rounded-full bg-border/40 px-2.5 py-1 text-xs text-txt-dim">dockerized</span>
+        </div>
+      </article>
+
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">API Starter (PHP)</h3>
+        </div>
+        <p class="mt-2 text-sm text-txt-dim">Auth, rate-limit, tests, release flow.</p>
+        <div class="mt-4 flex items-center gap-2">
+          <span class="rounded-full bg-pri/10 px-2.5 py-1 text-xs text-pri">TOP</span>
+          <span class="rounded-full bg-border/40 px-2.5 py-1 text-xs text-txt-dim">api-first</span>
+        </div>
+      </article>
+
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">CI Presets</h3>
+        </div>
+        <p class="mt-2 text-sm text-txt-dim">Build, test, preview, and release presets.</p>
+        <div class="mt-4 flex items-center gap-2">
+          <span class="rounded-full bg-pri/10 px-2.5 py-1 text-xs text-pri">TOP</span>
+          <span class="rounded-full bg-border/40 px-2.5 py-1 text-xs text-txt-dim">semver</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="mx-auto max-w-7xl px-4 py-16 md:py-24">
+    <div class="flex items-end justify-between">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold">Project Hub</h2>
+        <p class="mt-2 text-sm text-txt-dim max-w-2xl">Discover community projects, try live demos, and deploy to NGEE with one click.</p>
+      </div>
+      <a href="#cta" class="hidden md:inline-flex rounded-xl border border-border bg-surface px-4 py-2 text-sm hover:bg-surface/70">View showcase</a>
+    </div>
+
+    <div class="mt-6 grid gap-5 md:grid-cols-3">
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Starter SaaS</h3>
+        </div>
+        <p class="mt-2 text-sm text-txt-dim">Billing, auth, dashboard. Quick launch.</p>
+        <div class="mt-4 flex items-center gap-2">
+          <a class="rounded-xl border border-border bg-surface px-3 py-1.5 text-xs" href="#">Live demo</a>
+          <a class="rounded-xl bg-pri px-3 py-1.5 text-xs font-semibold text-black hover:bg-pri-hover shadow-glow" href="#">One-click deploy</a>
+        </div>
+      </article>
+
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Docs Site</h3>
+        </div>
+        <p class="mt-2 text-sm text-txt-dim">Static docs with search & dark mode.</p>
+        <div class="mt-4 flex items-center gap-2">
+          <a class="rounded-xl border border-border bg-surface px-3 py-1.5 text-xs" href="#">Live demo</a>
+          <a class="rounded-xl bg-pri px-3 py-1.5 text-xs font-semibold text-black hover:bg-pri-hover shadow-glow" href="#">One-click deploy</a>
+        </div>
+      </article>
+
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">Portfolio/Blog</h3>
+        </div>
+        <p class="mt-2 text-sm text-txt-dim">Markdown-first, deploy in seconds.</p>
+        <div class="mt-4 flex items-center gap-2">
+          <a class="rounded-xl border border-border bg-surface px-3 py-1.5 text-xs" href="#">Live demo</a>
+          <a class="rounded-xl bg-pri px-3 py-1.5 text-xs font-semibold text-black hover:bg-pri-hover shadow-glow" href="#">One-click deploy</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Community ===== -->
+  <section id="community" class="mx-auto max-w-7xl px-4 pb-6">
+    <div class="rounded-2lg border border-border bg-surface/60 p-6 md:p-8">
+      <div class="grid gap-8 md:grid-cols-3">
+        <div>
+          <h3 class="text-xl font-semibold">Forum & Discussions</h3>
+          <p class="mt-2 text-sm text-txt-dim">Ask questions, share solutions, and get feedback from peers.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">Events & Workshops</h3>
+          <p class="mt-2 text-sm text-txt-dim">Regular sessions from setup to scale. Learn by building.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">Mentorship</h3>
+          <p class="mt-2 text-sm text-txt-dim">Lightweight mentoring and office hours for real obstacles.</p>
+        </div>
+      </div>
+      <div class="mt-6">
+        <a href="#cta" class="inline-flex items-center gap-2 rounded-2lg bg-pri px-5 py-3 text-base font-semibold text-black hover:bg-pri-hover shadow-glow transition">
+          Join the Community
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Docs ===== -->
+  <section id="docs" class="mx-auto max-w-7xl px-4 py-16 md:py-24">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="rounded-2lg border border-border bg-surface p-6 md:p-8">
+        <h3 class="text-2xl font-semibold">Docs</h3>
+        <p class="mt-2 text-sm text-txt-dim max-w-2xl">
+          Clear guides for domain, DNS, hosting, and deployment. Everything you need to launch with confidence.
+        </p>
+        <ul class="mt-6 grid gap-3 text-sm text-txt-dim">
+          <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-pri"></span> Domain registration & transfer</li>
+          <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-info"></span> DNS records and nameservers</li>
+          <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-acc"></span> Hosting runtimes (Static / Node / PHP)</li>
+          <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-pri"></span> Git & webhook deployments</li>
+        </ul>
+        <div class="mt-6">
+          <a href="https://docs.ngee.top" class="inline-flex items-center gap-2 rounded-2lg bg-pri px-5 py-3 text-base font-semibold text-black hover:bg-pri-hover shadow-glow transition">
+            Go to Docs
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Doc quick-links card -->
+      <div class="rounded-2lg border border-border bg-surface/60 p-6">
+        <h4 class="font-semibold">Quick Links</h4>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          <a class="rounded-xl border border-border bg-[#0b1426] px-4 py-3 text-sm hover:bg-surface transition" href="https://docs.ngee.top/domains">Domains</a>
+          <a class="rounded-xl border border-border bg-[#0b1426] px-4 py-3 text-sm hover:bg-surface transition" href="https://docs.ngee.top/dns">DNS</a>
+          <a class="rounded-xl border border-border bg-[#0b1426] px-4 py-3 text-sm hover:bg-surface transition" href="https://docs.ngee.top/hosting">Hosting</a>
+          <a class="rounded-xl border border-border bg-[#0b1426] px-4 py-3 text-sm hover:bg-surface transition" href="https://docs.ngee.top/deploy">Deploy</a>
+        </div>
+        <p class="mt-3 text-[12px] text-txt-dim">Links are placeholders. Point them to your doc routes when ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Status (UptimeRobot-ready) ===== -->
+  <section id="status" class="mx-auto max-w-7xl px-4 pb-20 md:pb-28">
+    <div class="rounded-2lg border border-border bg-surface p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <h3 class="text-2xl font-semibold">Status</h3>
+          <p class="mt-2 text-sm text-txt-dim max-w-2xl">
+            Live uptime & incidents powered by UptimeRobot. Add your API key and monitor IDs to show real data.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="status-refresh" class="rounded-xl border border-border bg-surface px-4 py-2 text-sm hover:bg-surface/70">Refresh</button>
+          <span id="status-updated" class="text-xs text-txt-dim">Last updated — never</span>
+        </div>
+      </div>
+
+      <!-- Filters / badges -->
+      <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
+        <span class="rounded-full bg-pri/10 px-2.5 py-1 text-pri ring-1 ring-pri/20">UP</span>
+        <span class="rounded-full bg-acc/10 px-2.5 py-1 text-acc ring-1 ring-acc/20">SEEMS DOWN</span>
+        <span class="rounded-full bg-danger/10 px-2.5 py-1 text-danger ring-1 ring-danger/20">DOWN</span>
+        <span class="rounded-full bg-border/40 px-2.5 py-1 text-txt-dim">PAUSED / INIT</span>
+      </div>
+
+      <!-- Monitors grid -->
+      <div id="monitors" class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <!-- JS will render cards here -->
+      </div>
+
+      <p class="mt-4 text-[12px] text-txt-dim">
+        Uptime period: last <span id="uptime-days">30</span> days · API: <span class="mono">api.uptimerobot.com/v2/getMonitors</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Roadmap ===== -->
+  <section id="roadmap" class="mx-auto max-w-7xl px-4 py-16 md:py-24">
+    <h2 class="text-2xl md:text-3xl font-semibold">Roadmap</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="mono text-xs text-txt-dim">Q1</div>
+        <h4 class="mt-1 font-semibold">Domains & Hosting Beta</h4>
+        <p class="mt-1 text-sm text-txt-dim">Domain search & registrar integration, DNS manager, hosting beta (Node/PHP/Static) with automatic SSL.</p>
+      </div>
+      <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="mono text-xs text-txt-dim">Q2</div>
+        <h4 class="mt-1 font-semibold">One-click Deploy & Tools Catalog</h4>
+        <p class="mt-1 text-sm text-txt-dim">Git push/webhook deploy, Tools & Templates catalog, basic metrics (usage, logs).</p>
+      </div>
+      <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="mono text-xs text-txt-dim">Q3</div>
+        <h4 class="mt-1 font-semibold">Community Portal & Project Hub</h4>
+        <p class="mt-1 text-sm text-txt-dim">Forum, events, mentorship. Demos and “Built on NGEE” project badges.</p>
+      </div>
+      <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="mono text-xs text-txt-dim">Q4</div>
+        <h4 class="mt-1 font-semibold">Marketplace & OSS Program</h4>
+        <p class="mt-1 text-sm text-txt-dim">Template/tool marketplace, OSS sponsorship, lightweight learning tracks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Final CTA ===== -->
+  <section id="cta" class="mx-auto max-w-7xl px-4 pb-20 md:pb-28">
+    <div class="relative overflow-hidden rounded-2lg border border-border bg-surface">
+      <div class="absolute inset-0 pointer-events-none" style="background:
+        radial-gradient(600px 200px at 80% 10%, rgba(34,197,94,0.12), transparent 60%),
+        radial-gradient(500px 200px at 0% 100%, rgba(56,189,248,0.10), transparent 60%);">
+      </div>
+      <div class="relative p-8 md:p-12">
+        <div class="max-w-2xl">
+          <h3 class="text-2xl font-semibold">Ready to launch and grow?</h3>
+          <p class="mt-2 text-sm text-txt-dim">Secure a domain, pick a hosting plan, and start building with Tools Of Productivity.</p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#domains" class="inline-flex items-center justify-center gap-2 rounded-2lg bg-pri px-5 py-3 text-base font-semibold text-black hover:bg-pri-hover shadow-glow transition">
+              Get a Domain
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#hosting" class="inline-flex items-center justify-center gap-2 rounded-2lg border border-border bg-surface px-5 py-3 text-base">
+              Explore Hosting
+              <svg viewBox="0 0 24 24" class="h-5 w-5 text-txt-dim" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </a>
+            <a href="https://docs.ngee.top" class="inline-flex items-center justify-center gap-2 rounded-2lg border border-border bg-surface px-5 py-3 text-base">
+              Go to Docs
+              <svg viewBox="0 0 24 24" class="h-5 w-5 text-txt-dim" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-border/70">
+    <div class="mx-auto max-w-7xl px-4 py-10">
+      <div class="grid gap-8 md:grid-cols-4">
+        <div>
+          <div class="mono text-sm font-bold">NGEE.TOP</div>
+          <p class="mt-2 text-sm text-txt-dim">New-era General Engineering Engine · Tools Of Productivity</p>
+        </div>
+
+        <div>
+          <h5 class="text-sm font-semibold">Subdomains</h5>
+          <ul class="mt-2 space-y-1 text-sm text-txt-dim">
+            <li>www.ngee.top — landing</li>
+            <li>domains.ngee.top — search & purchase</li>
+            <li>cp.ngee.top — control panel</li>
+            <li>ns1.ngee.top / ns2.ngee.top — nameservers</li>
+            <li>deploy.ngee.top — one-click deploy</li>
+            <li>docs.ngee.top — documentation</li>
+            <li>status.ngee.top — status</li>
+            <li>tools.ngee.top — tools/templates</li>
+            <li>projects.ngee.top — showcase</li>
+            <li>community.ngee.top — forum & events</li>
+            <li>cdn.ngee.top — CDN (optional)</li>
+            <li>repo.ngee.top — git/forge (optional)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-sm font-semibold">Navigation</h5>
+          <ul class="mt-2 space-y-1 text-sm text-txt-dim">
+            <li><a href="#domains" class="hover:text-txt">Domains</a></li>
+            <li><a href="#hosting" class="hover:text-txt">Hosting</a></li>
+            <li><a href="#tools" class="hover:text-txt">Tools</a></li>
+            <li><a href="#projects" class="hover:text-txt">Projects</a></li>
+            <li><a href="#community" class="hover:text-txt">Community</a></li>
+            <li><a href="#docs" class="hover:text-txt">Docs</a></li>
+            <li><a href="#status" class="hover:text-txt">Status</a></li>
+            <li><a href="#roadmap" class="hover:text-txt">Roadmap</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-sm font-semibold">Social & Meta</h5>
+          <ul class="mt-2 space-y-1 text-sm text-txt-dim">
+            <li>Twitter/X: @ngee_top</li>
+            <li>GitHub: github.com/ngee-top</li>
+            <li>Blog/Updates</li>
+            <li class="mt-3 text-[12px]">© <span id="y"></span> NGEE.TOP. All rights reserved.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Status Script (UptimeRobot-ready) ===== -->
+  <script>
+    // ====== CONFIG ======
+    // Put your UptimeRobot Read-Only API Key here (not the main account key).
+    const UPTIMEROBOT_API_KEY = ""; // e.g., "u123456-xxxxxxxxxxxxxxxxxxxxxxxx"
+    // Optional: limit to certain monitor IDs (comma-separated string). Leave "" to fetch all on the key.
+    const MONITOR_IDS = ""; // e.g., "780123456,780123457"
+    // Uptime window in days (UptimeRobot supports: 7-30-60-90-180-365)
+    const CUSTOM_UPTIME_DAYS = 30;
+
+    // ====== UI HOOKS ======
+    const monitorsEl = document.getElementById('monitors');
+    const updatedEl  = document.getElementById('status-updated');
+    const refreshBtn = document.getElementById('status-refresh');
+    const uptimeDaysEl = document.getElementById('uptime-days');
+    uptimeDaysEl.textContent = CUSTOM_UPTIME_DAYS;
+
+    // ====== HELPERS ======
+    const statusMap = (code) => ({
+      0: { label: "PAUSED",      badge: "bg-border/40 text-txt-dim ring-1 ring-border/30" },
+      1: { label: "INIT",        badge: "bg-border/40 text-txt-dim ring-1 ring-border/30" },
+      2: { label: "UP",          badge: "bg-pri/10 text-pri ring-1 ring-pri/20" },
+      8: { label: "SEEMS DOWN",  badge: "bg-acc/10 text-acc ring-1 ring-acc/20" },
+      9: { label: "DOWN",        badge: "bg-danger/10 text-danger ring-1 ring-danger/20" },
+    }[code] || { label: "UNKNOWN", badge: "bg-border/40 text-txt-dim ring-1 ring-border/30" });
+
+    const fmt = (n, suffix='%') => (
+      (n === undefined || n === null || isNaN(+n)) ? '—' : `${(+n).toFixed(2)}${suffix}`
+    );
+
+    const human = (ts) => new Date(ts).toLocaleString();
+
+    function cardHTML(m) {
+      const s = statusMap(m.status);
+      const uptime = m.custom_uptime_ratio ?? m.all_time_uptime_ratio ?? null;
+      return `
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <h4 class="font-semibold">${m.friendly_name || m.url || 'Monitor'}</h4>
+            <p class="mt-1 text-xs text-txt-dim mono">${m.url || ''}</p>
+          </div>
+          <span class="inline-flex items-center rounded-xl px-2.5 py-1 text-xs ${s.badge}">${s.label}</span>
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
+          <div class="rounded-xl border border-border bg-[#0b1426] p-3">
+            <div class="text-[11px] text-txt-dim">Uptime (last ${CUSTOM_UPTIME_DAYS}d)</div>
+            <div class="mt-1 mono text-lg">${fmt(uptime)}</div>
+          </div>
+          <div class="rounded-xl border border-border bg-[#0b1426] p-3">
+            <div class="text-[11px] text-txt-dim">Type</div>
+            <div class="mt-1 mono">${m.type === 1 ? 'HTTP(S)' : m.type || '-'}</div>
+          </div>
+        </div>
+        <div class="mt-3 text-[12px] text-txt-dim">
+          <span>Last check: ${m.last_check ? human(m.last_check * 1000) : '—'}</span>
+        </div>
+      </article>`;
+    }
+
+    function render(monitors) {
+      monitorsEl.innerHTML = monitors.map(cardHTML).join('') || `
+        <div class="rounded-2lg border border-border bg-surface p-6 text-sm text-txt-dim">
+          No monitors yet. Add your UptimeRobot API key to show live status.
+        </div>`;
+      updatedEl.textContent = 'Last updated — ' + human(Date.now());
+    }
+
+    // Demo dataset (used if no API key present)
+    const demoMonitors = [
+      { friendly_name: "NGEE Landing", url: "https://www.ngee.top", status: 2, type: 1, last_check: Math.floor(Date.now()/1000) - 60, custom_uptime_ratio: 99.98 },
+      { friendly_name: "Docs", url: "https://docs.ngee.top", status: 2, type: 1, last_check: Math.floor(Date.now()/1000) - 120, custom_uptime_ratio: 99.90 },
+      { friendly_name: "Status", url: "https://status.ngee.top", status: 2, type: 1, last_check: Math.floor(Date.now()/1000) - 45, custom_uptime_ratio: 100 },
+      { friendly_name: "Deploy", url: "https://deploy.ngee.top", status: 8, type: 1, last_check: Math.floor(Date.now()/1000) - 300, custom_uptime_ratio: 98.12 }
+    ];
+
+    async function fetchStatus() {
+      if (!UPTIMEROBOT_API_KEY) {
+        render(demoMonitors);
+        return;
+      }
+      try {
+        const params = new URLSearchParams();
+        params.append('api_key', UPTIMEROBOT_API_KEY);
+        params.append('format', 'json');
+        if (MONITOR_IDS) params.append('monitors', MONITOR_IDS);
+        // Ask UptimeRobot to compute uptime ratio for CUSTOM_UPTIME_DAYS
+        params.append('custom_uptime_ratios', String(CUSTOM_UPTIME_DAYS));
+        // Limit fields to reduce payload
+        params.append('logs', '0');
+        const res = await fetch('https://api.uptimerobot.com/v2/getMonitors', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        });
+        const data = await res.json();
+        if (data && data.monitors) {
+          // Map custom_uptime_ratios "99.99" string to number and into custom_uptime_ratio
+          const monitors = data.monitors.map(m => ({
+            ...m,
+            custom_uptime_ratio: (m.custom_uptime_ratio ?? (m.custom_uptime_ratios ? +String(m.custom_uptime_ratios).split('-')[0] : null))
+          }));
+          render(monitors);
+        } else {
+          render([]);
+        }
+      } catch (e) {
+        console.error(e);
+        render([]);
+      }
+    }
+
+    refreshBtn.addEventListener('click', fetchStatus);
+    fetchStatus(); // initial
+
+    // dynamic year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
