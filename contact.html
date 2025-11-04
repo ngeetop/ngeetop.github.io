@@ -1,229 +1,573 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — NGEE.TOP</title>
-  <meta name="description" content="Contact NGEE.TOP — get support, sales info, or partnership details."/>
-  <meta name="theme-color" content="#0B1220" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode:'class',
-      theme:{extend:{
-        colors:{bg:'#0B1220',surface:'#0F172A',border:'#1E293B',txt:'#E2E8F0','txt-dim':'#94A3B8',pri:'#22C55E','pri-hover':'#16A34A',acc:'#F59E0B',info:'#38BDF8',danger:'#EF4444'},
-        boxShadow:{glow:'0 0 0 2px rgba(34,197,94,0.14), 0 12px 64px rgba(34,197,94,0.10)'},
-        borderRadius:{'2lg':'14px'},
-        backgroundImage:{'hero-grid':'radial-gradient(1100px 520px at 75% -10%, rgba(34,197,94,0.10) 0%, rgba(34,197,94,0.00) 60%), radial-gradient(850px 420px at -10% 20%, rgba(56,189,248,0.10) 0%, rgba(56,189,248,0.00) 60%)'}
-      }}
-    }
-  </script>
-  <style>
-    :root{color-scheme:dark}
-    html,body{background:#0B1220}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#E2E8F0}
-    .mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
-  </style>
-</head>
-<body class="bg-bg text-txt antialiased selection:bg-pri/20 selection:text-txt">
-
-  <!-- Nav -->
-  <header class="sticky top-0 z-40 border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
-    <div class="mx-auto max-w-7xl px-4 py-3">
-      <div class="flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-3 group">
-          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-surface ring-1 ring-border">
-            <svg viewBox="0 0 24 24" class="h-5 w-5 text-pri group-hover:rotate-6 transition" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="3.5"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
-            </svg>
-          </span>
-          <div class="leading-5">
-            <div class="mono text-sm font-bold">NGEE.TOP</div>
-            <div class="text-xs text-txt-dim">Tools Of Productivity</div>
-          </div>
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="index.html#domains" class="text-txt-dim hover:text-txt">Domains</a>
-          <a href="index.html#hosting" class="text-txt-dim hover:text-txt">Hosting</a>
-          <a href="tools.html" class="text-txt-dim hover:text-txt">Tools</a>
-          <a href="projects.html" class="text-txt-dim hover:text-txt">Projects</a>
-          <a href="index.html#community" class="text-txt-dim hover:text-txt">Community</a>
-          <a href="https://docs.ngee.top" class="text-txt-dim hover:text-txt">Docs</a>
-          <a href="index.html#status" class="text-txt-dim hover:text-txt">Status</a>
-          <a href="about.html" class="text-txt-dim hover:text-txt">About</a>
-          <a href="contact.html" class="text-txt font-semibold">Contact</a>
-          <a href="index.html#cta" class="inline-flex items-center gap-2 rounded-xl bg-pri px-4 py-2 text-sm font-semibold text-black hover:bg-pri-hover shadow-glow">Get a Domain</a>
-        </nav>
-        <a href="#" class="md:hidden rounded-xl border border-border bg-surface px-3 py-2 text-sm">Menu</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-hero-grid pointer-events-none"></div>
-    <div class="mx-auto max-w-7xl px-4 py-14 md:py-20">
-      <div class="max-w-3xl">
-        <span class="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-txt-dim">
-          <span class="h-2 w-2 rounded-full bg-pri/80"></span> Contact NGEE.TOP
-        </span>
-        <h1 class="mt-5 text-4xl md:text-5xl font-semibold">We’re here to help.</h1>
-        <p class="mt-3 text-lg text-txt-dim">Support, sales, partnerships, or press—reach out and we’ll get back to you.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact cards -->
-  <section class="mx-auto max-w-7xl px-4">
-    <div class="grid gap-6 md:grid-cols-3">
-      <div class="rounded-2lg border border-border bg-surface/60 p-6">
-        <h3 class="font-semibold">Support</h3>
-        <p class="mt-2 text-sm text-txt-dim">Product questions, incidents, billing.</p>
-        <p class="mt-3 text-sm"><a id="supportMail" class="text-pri hover:underline" href="mailto:support@ngee.top">support@ngee.top</a></p>
-        <button data-copy="#supportMail" class="copyBtn mt-2 rounded-xl border border-border bg-surface px-3 py-1.5 text-xs">Copy email</button>
-      </div>
-      <div class="rounded-2lg border border-border bg-surface/60 p-6">
-        <h3 class="font-semibold">Sales</h3>
-        <p class="mt-2 text-sm text-txt-dim">Custom domains, plans, and invoices.</p>
-        <p class="mt-3 text-sm"><a id="salesMail" class="text-pri hover:underline" href="mailto:sales@ngee.top">sales@ngee.top</a></p>
-        <button data-copy="#salesMail" class="copyBtn mt-2 rounded-xl border border-border bg-surface px-3 py-1.5 text-xs">Copy email</button>
-      </div>
-      <div class="rounded-2lg border border-border bg-surface/60 p-6">
-        <h3 class="font-semibold">Partnerships / Press</h3>
-        <p class="mt-2 text-sm text-txt-dim">Integrations, events, and media.</p>
-        <p class="mt-3 text-sm"><a id="pressMail" class="text-pri hover:underline" href="mailto:press@ngee.top">press@ngee.top</a></p>
-        <button data-copy="#pressMail" class="copyBtn mt-2 rounded-xl border border-border bg-surface px-3 py-1.5 text-xs">Copy email</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact form -->
-  <section class="mx-auto max-w-7xl px-4 py-12 md:py-16">
-    <div class="grid gap-6 md:grid-cols-2">
-      <div class="rounded-2lg border border-border bg-surface p-6 md:p-8">
-        <h2 class="text-2xl font-semibold">Send us a message</h2>
-        <p class="mt-2 text-sm text-txt-dim">No backend needed—this form uses <span class="mono">mailto:</span> by default. Replace with your endpoint later.</p>
-        <form id="contactForm" class="mt-6 space-y-4">
-          <div class="grid gap-4 md:grid-cols-2">
-            <div>
-              <label class="text-xs text-txt-dim">First name</label>
-              <input name="first" required class="mt-1 w-full rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm outline-none"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — NGEE.TOP</title>
+    <meta
+      name="description"
+      content="Contact NGEE.TOP — get support, sales info, or partnership details." />
+    <meta name="theme-color" content="#0B1220" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              bg: "#0B1220",
+              surface: "#0F172A",
+              border: "#1E293B",
+              txt: "#E2E8F0",
+              "txt-dim": "#94A3B8",
+              pri: "#22C55E",
+              "pri-hover": "#16A34A",
+              acc: "#F59E0B",
+              info: "#38BDF8",
+              danger: "#EF4444",
+            },
+            boxShadow: {
+              glow: "0 0 0 2px rgba(34,197,94,0.14), 0 12px 64px rgba(34,197,94,0.10)",
+            },
+            borderRadius: { "2lg": "14px" },
+            backgroundImage: {
+              "hero-grid":
+                "radial-gradient(1100px 520px at 75% -10%, rgba(34,197,94,0.10) 0%, rgba(34,197,94,0.00) 60%), radial-gradient(850px 420px at -10% 20%, rgba(56,189,248,0.10) 0%, rgba(56,189,248,0.00) 60%)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      html,
+      body {
+        background: #0b1220;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+        color: #e2e8f0;
+      }
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+          Consolas, "Liberation Mono", monospace;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-bg text-txt antialiased selection:bg-pri/20 selection:text-txt">
+    <!-- Nav -->
+    <header
+      class="sticky top-0 z-40 border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
+      <div class="mx-auto max-w-7xl px-4 py-3">
+        <div class="flex items-center justify-between">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-surface ring-1 ring-border">
+              <svg
+                viewBox="0 0 24 24"
+                class="h-5 w-5 text-pri group-hover:rotate-6 transition"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5">
+                <circle cx="12" cy="12" r="3.5" />
+                <path
+                  d="M12 3v2M12 19v2M3 12h2M19 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+              </svg>
+            </span>
+            <div class="leading-5">
+              <div class="mono text-sm font-bold">NGEE.TOP</div>
+              <div class="text-xs text-txt-dim">Tools Of Productivity</div>
             </div>
-            <div>
-              <label class="text-xs text-txt-dim">Last name</label>
-              <input name="last" class="mt-1 w-full rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm outline-none"/>
-            </div>
-          </div>
-          <div>
-            <label class="text-xs text-txt-dim">Email</label>
-            <input type="email" name="email" required class="mt-1 w-full rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm outline-none"/>
-          </div>
-          <div>
-            <label class="text-xs text-txt-dim">Topic</label>
-            <select name="topic" class="mt-1 w-full rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm outline-none">
-              <option>Support</option><option>Sales</option><option>Partnership</option><option>Press</option><option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label class="text-xs text-txt-dim">Message</label>
-            <textarea name="message" rows="6" required class="mt-1 w-full rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm outline-none" placeholder="How can we help?"></textarea>
-          </div>
-          <div class="flex items-center gap-3">
-            <button class="rounded-2lg bg-pri px-5 py-3 text-sm font-semibold text-black hover:bg-pri-hover shadow-glow">Send</button>
-            <span id="formStatus" class="text-xs text-txt-dim"></span>
-          </div>
-          <p class="text-[12px] text-txt-dim">By submitting, you agree to our basic data handling for support purposes.</p>
-        </form>
-      </div>
-
-      <!-- Alt contact + map placeholder -->
-      <div class="rounded-2lg border border-border bg-surface/60 p-6 md:p-8">
-        <h3 class="text-xl font-semibold">Other ways to reach us</h3>
-        <ul class="mt-3 space-y-2 text-sm text-txt-dim">
-          <li>• Community forum: <a href="index.html#community" class="text-pri hover:underline">Join discussions</a></li>
-          <li>• Status updates: <a href="index.html#status" class="text-pri hover:underline">status.ngee.top</a></li>
-          <li>• Docs & guides: <a href="https://docs.ngee.top" class="text-pri hover:underline">docs.ngee.top</a></li>
-        </ul>
-        <div class="mt-6 rounded-2lg border border-border bg-[#0b1426] p-4">
-          <div class="flex items-center gap-2 text-sm"><span class="h-2 w-2 rounded-full bg-pri"></span> Office / Remote</div>
-          <p class="mt-2 text-sm text-txt-dim">We’re a remote-first team. Add your office address or a map embed here if needed.</p>
-          <div class="mt-3 h-40 w-full rounded-xl border border-border bg-border/20 flex items-center justify-center text-txt-dim text-sm">Map / Location placeholder</div>
+          </a>
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="/" class="text-txt-dim hover:text-txt">Home</a>
+            <a href="index.html#domains" class="text-txt-dim hover:text-txt"
+              >Domains</a
+            >
+            <a href="index.html#hosting" class="text-txt-dim hover:text-txt"
+              >Hosting</a
+            >
+            <a href="tools.html" class="text-txt-dim hover:text-txt">Tools</a>
+            <a href="projects.html" class="text-txt-dim hover:text-txt"
+              >Projects</a
+            >
+            <a href="index.html#community" class="text-txt-dim hover:text-txt"
+              >Community</a
+            >
+            <!-- <a href="https://docs.ngee.top" class="text-txt-dim hover:text-txt"
+              >Docs</a
+            > -->
+            <a href="status.html" class="text-txt-dim hover:text-txt">Status</a>
+            <a href="about.html" class="text-txt-dim hover:text-txt">About</a>
+            <a href="contact.html" class="text-txt font-semibold">Contact</a>
+            <a
+              href="index.html#cta"
+              class="inline-flex items-center gap-2 rounded-xl bg-pri px-4 py-2 text-sm font-semibold text-black hover:bg-pri-hover shadow-glow"
+              >Get a Domain</a
+            >
+          </nav>
+          <button
+            id="menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            class="md:hidden inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-3 py-2 text-sm">
+            Menu
+          </button>
         </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- FAQ -->
-  <section class="mx-auto max-w-7xl px-4 pb-16">
-    <h3 class="text-2xl font-semibold">Frequently Asked</h3>
-    <div class="mt-6 grid gap-6 md:grid-cols-2">
-      <div class="rounded-2lg border border-border bg-surface/60 p-6">
-        <h4 class="font-semibold">Do you offer custom domains and SSL?</h4>
-        <p class="mt-2 text-sm text-txt-dim">Yes. You can register/transfer domains and get automatic SSL on hosting plans.</p>
-      </div>
-      <div class="rounded-2lg border border-border bg-surface/60 p-6">
-        <h4 class="font-semibold">Is there a community for support?</h4>
-        <p class="mt-2 text-sm text-txt-dim">Yes—forums, events, and mentorship. See the Community section on the home page.</p>
-      </div>
-      <div class="rounded-2lg border border-border bg-surface/60 p-6">
-        <h4 class="font-semibold">How can I showcase a project?</h4>
-        <p class="mt-2 text-sm text-txt-dim">Submit via the Project Hub with a demo link and source. We review and feature regularly.</p>
-      </div>
-      <div class="rounded-2lg border border-border bg-surface/60 p-6">
-        <h4 class="font-semibold">Do you have an API?</h4>
-        <p class="mt-2 text-sm text-txt-dim">Planned. We’ll announce domain/hosting and deploy APIs on the docs site.</p>
+    <!-- Mobile Nav Panel -->
+    <div
+      id="mobile-nav"
+      class="md:hidden hidden border-b border-border/60 bg-surface/80">
+      <div class="mx-auto max-w-7xl px-4 py-3 grid gap-2">
+        <a
+          href="index.html#domains"
+          class="block rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm"
+          >Domains</a
+        >
+        <a
+          href="index.html#hosting"
+          class="block rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm"
+          >Hosting</a
+        >
+        <a
+          href="tools.html"
+          class="block rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm"
+          >Tools</a
+        >
+        <a
+          href="projects.html"
+          class="block rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm"
+          >Projects</a
+        >
+        <a
+          href="index.html#community"
+          class="block rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm"
+          >Community</a
+        >
+        <!-- <a
+          href="https://docs.ngee.top"
+          class="block rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm"
+          >Docs</a
+        > -->
+        <a
+          href="status.html"
+          class="block rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm"
+          >Status</a
+        >
+        <a
+          href="about.html"
+          class="block rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm"
+          >About</a
+        >
+        <a
+          href="contact.html"
+          class="block rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm"
+          >Contact</a
+        >
+        <a
+          href="index.html#cta"
+          class="block rounded-xl bg-pri px-3 py-2 text-sm font-semibold text-black hover:bg-pri-hover shadow-glow"
+          >Get a Domain</a
+        >
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-border/70">
-    <div class="mx-auto max-w-7xl px-4 py-10 grid gap-8 md:grid-cols-4">
-      <div><div class="mono text-sm font-bold">NGEE.TOP</div><p class="mt-2 text-sm text-txt-dim">New-era General Engineering Engine · Tools Of Productivity</p></div>
-      <div><h5 class="text-sm font-semibold">Explore</h5><ul class="mt-2 space-y-1 text-sm text-txt-dim"><li><a href="index.html#domains" class="hover:text-txt">Domains</a></li><li><a href="index.html#hosting" class="hover:text-txt">Hosting</a></li><li><a href="tools.html" class="hover:text-txt">Tools</a></li><li><a href="projects.html" class="hover:text-txt">Projects</a></li><li><a href="index.html#community" class="hover:text-txt">Community</a></li></ul></div>
-      <div><h5 class="text-sm font-semibold">Docs</h5><ul class="mt-2 space-y-1 text-sm text-txt-dim"><li><a href="https://docs.ngee.top/domains" class="hover:text-txt">Domains</a></li><li><a href="https://docs.ngee.top/dns" class="hover:text-txt">DNS</a></li><li><a href="https://docs.ngee.top/hosting" class="hover:text-txt">Hosting</a></li><li><a href="https://docs.ngee.top/deploy" class="hover:text-txt">Deploy</a></li></ul></div>
-      <div><h5 class="text-sm font-semibold">Meta</h5><ul class="mt-2 space-y-1 text-sm text-txt-dim"><li>Twitter/X: @ngee_top</li><li>GitHub: github.com/ngee-top</li><li class="mt-3 text-[12px]">© <span id="y"></span> NGEE.TOP</li></ul></div>
-    </div>
-  </footer>
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-hero-grid pointer-events-none"></div>
+      <div class="mx-auto max-w-7xl px-4 py-14 md:py-20">
+        <div class="max-w-3xl">
+          <span
+            class="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-txt-dim">
+            <span class="h-2 w-2 rounded-full bg-pri/80"></span> Contact
+            NGEE.TOP
+          </span>
+          <h1 class="mt-5 text-4xl md:text-5xl font-semibold">
+            We’re here to help.
+          </h1>
+          <p class="mt-3 text-lg text-txt-dim">
+            Support, sales, partnerships, or press—reach out and we’ll get back
+            to you.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Contact form JS -->
-  <script>
-    // Copy email helper
-    document.querySelectorAll('.copyBtn').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const sel = btn.getAttribute('data-copy');
-        const el = document.querySelector(sel);
-        if(!el) return;
-        const email = el.textContent.trim();
-        navigator.clipboard.writeText(email).then(()=> {
-          btn.textContent = 'Copied!';
-          setTimeout(()=>btn.textContent='Copy email',1200);
+    <!-- Contact cards -->
+    <section class="mx-auto max-w-7xl px-4 mb-6">
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-2lg border border-border bg-surface/60 p-6">
+          <h3 class="font-semibold">Support</h3>
+          <p class="mt-2 text-sm text-txt-dim">
+            Product questions, incidents, billing.
+          </p>
+          <p class="mt-3 text-sm">
+            <a
+              id="supportMail"
+              class="text-pri hover:underline"
+              href="mailto:ngeetopofficial@gmail.com"
+              >ngeetopofficial@gmail.com</a
+            >
+          </p>
+          <button
+            data-copy="#supportMail"
+            class="copyBtn mt-2 rounded-xl border border-border bg-surface px-3 py-1.5 text-xs">
+            Copy email
+          </button>
+        </div>
+        <div class="rounded-2lg border border-border bg-surface/60 p-6">
+          <h3 class="font-semibold">Sales</h3>
+          <p class="mt-2 text-sm text-txt-dim">
+            Custom domains, plans, and invoices.
+          </p>
+          <p class="mt-3 text-sm">
+            <a
+              id="salesMail"
+              class="text-pri hover:underline"
+              href="mailto:ngeetopofficial@gmail.com"
+              >ngeetopofficial@gmail.com</a
+            >
+          </p>
+          <button
+            data-copy="#salesMail"
+            class="copyBtn mt-2 rounded-xl border border-border bg-surface px-3 py-1.5 text-xs">
+            Copy email
+          </button>
+        </div>
+        <div class="rounded-2lg border border-border bg-surface/60 p-6">
+          <h3 class="font-semibold">Partnerships / Press</h3>
+          <p class="mt-2 text-sm text-txt-dim">
+            Integrations, events, and media.
+          </p>
+          <p class="mt-3 text-sm">
+            <a
+              id="pressMail"
+              class="text-pri hover:underline"
+              href="mailto:ngeetopofficial@gmail.com"
+              >ngeetopofficial@gmail.com</a
+            >
+          </p>
+          <button
+            data-copy="#pressMail"
+            class="copyBtn mt-2 rounded-xl border border-border bg-surface px-3 py-1.5 text-xs">
+            Copy email
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact form -->
+    <!-- <section class="mx-auto max-w-7xl px-4 py-12 md:py-16">
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-2lg border border-border bg-surface p-6 md:p-8">
+          <h2 class="text-2xl font-semibold">Send us a message</h2>
+          <p class="mt-2 text-sm text-txt-dim">
+            No backend needed—this form uses
+            <span class="mono">mailto:</span> by default. Replace with your
+            endpoint later.
+          </p>
+          <form id="contactForm" class="mt-6 space-y-4">
+            <div class="grid gap-4 md:grid-cols-2">
+              <div>
+                <label class="text-xs text-txt-dim">First name</label>
+                <input
+                  name="first"
+                  required
+                  class="mt-1 w-full rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm outline-none" />
+              </div>
+              <div>
+                <label class="text-xs text-txt-dim">Last name</label>
+                <input
+                  name="last"
+                  class="mt-1 w-full rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm outline-none" />
+              </div>
+            </div>
+            <div>
+              <label class="text-xs text-txt-dim">Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                class="mt-1 w-full rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm outline-none" />
+            </div>
+            <div>
+              <label class="text-xs text-txt-dim">Topic</label>
+              <select
+                name="topic"
+                class="mt-1 w-full rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm outline-none">
+                <option>Support</option>
+                <option>Sales</option>
+                <option>Partnership</option>
+                <option>Press</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs text-txt-dim">Message</label>
+              <textarea
+                name="message"
+                rows="6"
+                required
+                class="mt-1 w-full rounded-xl border border-border bg-[#0b1426] px-3 py-2 text-sm outline-none"
+                placeholder="How can we help?"></textarea>
+            </div>
+            <div class="flex items-center gap-3">
+              <button
+                class="rounded-2lg bg-pri px-5 py-3 text-sm font-semibold text-black hover:bg-pri-hover shadow-glow">
+                Send
+              </button>
+              <span id="formStatus" class="text-xs text-txt-dim"></span>
+            </div>
+            <p class="text-[12px] text-txt-dim">
+              By submitting, you agree to our basic data handling for support
+              purposes.
+            </p>
+          </form>
+        </div>
+
+        <div class="rounded-2lg border border-border bg-surface/60 p-6 md:p-8">
+          <h3 class="text-xl font-semibold">Other ways to reach us</h3>
+          <ul class="mt-3 space-y-2 text-sm text-txt-dim">
+            <li>
+              • Community forum:
+              <a href="index.html#community" class="text-pri hover:underline"
+                >Join discussions</a
+              >
+            </li>
+            <li>
+              • Status updates:
+              <a href="index.html#status" class="text-pri hover:underline"
+                >status.ngee.top</a
+              >
+            </li>
+            <li>
+              • Docs & guides:
+              <a href="https://docs.ngee.top" class="text-pri hover:underline"
+                >docs.ngee.top</a
+              >
+            </li>
+          </ul>
+          <div class="mt-6 rounded-2lg border border-border bg-[#0b1426] p-4">
+            <div class="flex items-center gap-2 text-sm">
+              <span class="h-2 w-2 rounded-full bg-pri"></span> Office / Remote
+            </div>
+            <p class="mt-2 text-sm text-txt-dim">
+              We’re a remote-first team. Add your office address or a map embed
+              here if needed.
+            </p>
+            <div
+              class="mt-3 h-40 w-full rounded-xl border border-border bg-border/20 flex items-center justify-center text-txt-dim text-sm">
+              Map / Location placeholder
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- FAQ -->
+    <section class="mx-auto max-w-7xl px-4 pb-16">
+      <h3 class="text-2xl font-semibold">Frequently Asked</h3>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <div class="rounded-2lg border border-border bg-surface/60 p-6">
+          <h4 class="font-semibold">Do you offer custom domains and SSL?</h4>
+          <p class="mt-2 text-sm text-txt-dim">
+            Yes. You can register/transfer domains and get automatic SSL on
+            hosting plans.
+          </p>
+        </div>
+        <div class="rounded-2lg border border-border bg-surface/60 p-6">
+          <h4 class="font-semibold">Is there a community for support?</h4>
+          <p class="mt-2 text-sm text-txt-dim">
+            Yes—forums, events, and mentorship. See the Community section on the
+            home page.
+          </p>
+        </div>
+        <div class="rounded-2lg border border-border bg-surface/60 p-6">
+          <h4 class="font-semibold">How can I showcase a project?</h4>
+          <p class="mt-2 text-sm text-txt-dim">
+            Submit via the Project Hub with a demo link and source. We review
+            and feature regularly.
+          </p>
+        </div>
+        <div class="rounded-2lg border border-border bg-surface/60 p-6">
+          <h4 class="font-semibold">Do you have an API?</h4>
+          <p class="mt-2 text-sm text-txt-dim">
+            Planned. We’ll announce domain/hosting and deploy APIs on the docs
+            site.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="border-t border-border/70">
+      <div class="mx-auto max-w-7xl px-4 py-10">
+        <div class="grid gap-8 md:grid-cols-4">
+          <div>
+            <div class="mono text-sm font-bold">NGEE.TOP</div>
+            <p class="mt-2 text-sm text-txt-dim">
+              New-era General Engineering Engine · Tools Of Productivity
+            </p>
+          </div>
+          <div>
+            <h5 class="text-sm font-semibold">Explore</h5>
+            <ul class="mt-2 space-y-1 text-sm text-txt-dim">
+              <li>
+                <a href="index.html#domains" class="hover:text-txt">Domains</a>
+              </li>
+              <li>
+                <a href="index.html#hosting" class="hover:text-txt">Hosting</a>
+              </li>
+              <li>
+                <a href="tools.html" class="hover:text-txt">Tools</a>
+              </li>
+              <li>
+                <a href="projects.html" class="hover:text-txt">Projects</a>
+              </li>
+              <li>
+                <a href="index.html#community" class="hover:text-txt"
+                  >Community</a
+                >
+              </li>
+              <li>
+                <a href="status.html" class="hover:text-txt">Status</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="text-sm font-semibold">Docs</h5>
+            <ul class="mt-2 space-y-1 text-sm text-txt-dim">
+              <li>
+                <a href="https://docs.ngee.top/domains" class="hover:text-txt"
+                  >Domains</a
+                >
+              </li>
+              <li>
+                <a href="https://docs.ngee.top/dns" class="hover:text-txt"
+                  >DNS</a
+                >
+              </li>
+              <li>
+                <a href="https://docs.ngee.top/hosting" class="hover:text-txt"
+                  >Hosting</a
+                >
+              </li>
+              <li>
+                <a href="https://docs.ngee.top/deploy" class="hover:text-txt"
+                  >Deploy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="text-sm font-semibold">Meta</h5>
+            <ul class="mt-2 space-y-1 text-sm text-txt-dim">
+              <!-- <li>Twitter/X: @ngee_top</li> -->
+              <li>GitHub: github.com/ngeetop</li>
+              <li class="mt-3 text-[12px]">© <span id="y"></span> NGEE.TOP</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Contact form JS -->
+    <script>
+      // Copy email helper
+      document.querySelectorAll(".copyBtn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const sel = btn.getAttribute("data-copy");
+          const el = document.querySelector(sel);
+          if (!el) return;
+          const email = el.textContent.trim();
+          navigator.clipboard.writeText(email).then(() => {
+            btn.textContent = "Copied!";
+            setTimeout(() => (btn.textContent = "Copy email"), 1200);
+          });
         });
       });
-    });
 
-    // Simple mailto submit (replace with real endpoint later)
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const data = new FormData(form);
-      const to = (data.get('topic') === 'Sales') ? 'sales@ngee.top'
-              : (data.get('topic') === 'Partnership' || data.get('topic')==='Press') ? 'press@ngee.top'
-              : 'support@ngee.top';
-      const subject = encodeURIComponent(`[NGEE.TOP] ${data.get('topic')} — ${data.get('first')||''} ${data.get('last')||''}`);
-      const body = encodeURIComponent(
-        `Name: ${data.get('first')||''} ${data.get('last')||''}\nEmail: ${data.get('email')}\nTopic: ${data.get('topic')}\n\n${data.get('message')}\n`
-      );
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-      status.textContent = 'Opening your mail app…';
-      setTimeout(()=>{ status.textContent='If your email client didn’t open, write us at ' + to; }, 2500);
-    });
+      // Simple mailto submit (replace with real endpoint later)
+      const form = document.getElementById("contactForm");
+      const status = document.getElementById("formStatus");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const to =
+          data.get("topic") === "Sales"
+            ? "sales@ngee.top"
+            : data.get("topic") === "Partnership" ||
+              data.get("topic") === "Press"
+            ? "press@ngee.top"
+            : "support@ngee.top";
+        const subject = encodeURIComponent(
+          `[NGEE.TOP] ${data.get("topic")} — ${data.get("first") || ""} ${
+            data.get("last") || ""
+          }`
+        );
+        const body = encodeURIComponent(
+          `Name: ${data.get("first") || ""} ${
+            data.get("last") || ""
+          }\nEmail: ${data.get("email")}\nTopic: ${data.get(
+            "topic"
+          )}\n\n${data.get("message")}\n`
+        );
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+        status.textContent = "Opening your mail app…";
+        setTimeout(() => {
+          status.textContent =
+            "If your email client didn’t open, write us at " + to;
+        }, 2500);
+      });
 
-    document.getElementById('y').textContent=new Date().getFullYear();
-  </script>
-</body>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      (function () {
+        const btn = document.getElementById("menu-toggle");
+        const panel = document.getElementById("mobile-nav");
+        if (!btn || !panel) return;
+
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const hidden = panel.classList.contains("hidden");
+          if (hidden) {
+            panel.classList.remove("hidden");
+            btn.setAttribute("aria-expanded", "true");
+          } else {
+            panel.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        panel.addEventListener("click", (ev) => {
+          const a = ev.target.closest("a[href]");
+          if (a) {
+            panel.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        document.addEventListener("keydown", (ev) => {
+          if (ev.key === "Escape") {
+            panel.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+      })();
+    </script>
+  </body>
 </html>

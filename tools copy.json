@@ -1,0 +1,15 @@
+[
+  { "id": 1,  "name": "Web App Starter",         "type": "starter",  "runtime": "node",   "tags": ["vite","ts","eslint","prettier"], "desc": "Vite + TS + testing + deploy config.", "url": "#", "repo": "#", "updated": "2025-09-20" },
+  { "id": 2,  "name": "API Starter (PHP)",       "type": "starter",  "runtime": "php",    "tags": ["auth","ratelimit","tests"],       "desc": "Auth, rate-limit, tests, release flow.",   "url": "#", "repo": "#", "updated": "2025-09-18" },
+  { "id": 3,  "name": "Static Docs Template",    "type": "template", "runtime": "static", "tags": ["docs","search","dark-mode"],      "desc": "Markdown docs with search.",              "url": "#", "repo": "#", "updated": "2025-08-17" },
+  { "id": 4,  "name": "CI Presets (Web)",        "type": "ci",       "runtime": "",       "tags": ["build","test","preview","release"], "desc": "GH Actions presets for web.",             "url": "#", "repo": "#", "updated": "2025-07-09" },
+  { "id": 5,  "name": "Landing Template",        "type": "template", "runtime": "static", "tags": ["tailwind","seo"],                  "desc": "Modern landing with Ink–Emerald theme.",  "url": "#", "repo": "#", "updated": "2025-09-01" },
+  { "id": 6,  "name": "Node API Utility Kit",    "type": "utility",  "runtime": "node",   "tags": ["env","logger","config"],          "desc": "Config, logger, healthcheck.",           "url": "#", "repo": "#", "updated": "2025-08-28" },
+  { "id": 7,  "name": "Laravel Deploy Preset",   "type": "ci",       "runtime": "php",    "tags": ["deploy","mysql","queues"],        "desc": "CI + deploy flows for Laravel.",        "url": "#", "repo": "#", "updated": "2025-06-22" },
+  { "id": 8,  "name": "Portfolio/Blog Template", "type": "template", "runtime": "static", "tags": ["markdown","blog"],                  "desc": "Portfolio/blog with MD content.",       "url": "#", "repo": "#", "updated": "2025-09-10" },
+  { "id": 9,  "name": "Monorepo Starter",        "type": "starter",  "runtime": "node",   "tags": ["pnpm","turbo","workspace"],       "desc": "Turborepo + pnpm + TS.",                "url": "#", "repo": "#", "updated": "2025-08-02" },
+  { "id": 10, "name": "PHP API Test Utils",      "type": "utility",  "runtime": "php",    "tags": ["testing","pest","fixtures"],      "desc": "Test helpers for APIs.",                "url": "#", "repo": "#", "updated": "2025-05-15" },
+  { "id": 11, "name": "SaaS Starter",            "type": "starter",  "runtime": "node",   "tags": ["billing","auth","dash"],          "desc": "SaaS base with billing.",             "url": "#", "repo": "#", "updated": "2025-09-26" },
+  { "id": 12, "name": "Image CDN Template",      "type": "template", "runtime": "static", "tags": ["cdn","images"],                   "desc": "Static CDN-ready image site.",        "url": "#", "repo": "#", "updated": "2025-04-30" },
+  { "id": 13, "name": "webhook.ngee.top",        "type": "utility",  "runtime": "",       "tags": ["webhook","tools"],                "desc": "Tools webhook untuk menerima & inspeksi webhook.", "url": "https://webhook.ngee.top", "repo": "#", "updated": "2025-10-02" }
+]

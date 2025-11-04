@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow common private paths (uncomment if needed)
+# Disallow: /api/
+# Disallow: /admin/
+
+Sitemap: https://ngee.top/sitemap.xml

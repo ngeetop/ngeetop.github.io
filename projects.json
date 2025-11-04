@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "news.ngee.top",
+    "kind": "site",
+    "runtime": "static",
+    "status": "stable",
+    "tags": ["news", "berita"],
+    "desc": "Web news using AI Generation NGEE.TOP.",
+    "demo": "https://news.ngee.top",
+    "deploy": "",
+    "repo": "",
+    "updated": "2025-10-01",
+    "builtOn": true
+  }
+]
