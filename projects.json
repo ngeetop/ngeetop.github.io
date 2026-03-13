@@ -12,5 +12,19 @@
     "repo": "",
     "updated": "2025-10-01",
     "builtOn": true
+  },
+  {
+    "id": 2,
+    "name": "jobs.ngee.top",
+    "kind": "app",
+    "runtime": "node",
+    "status": "stable",
+    "tags": ["jobs", "ai", "crawler"],
+    "desc": "Portal loker dengan AI validation & automatic crawler.",
+    "demo": "https://jobs.ngee.top",
+    "deploy": "",
+    "repo": "",
+    "updated": "2026-03-13",
+    "builtOn": true
   }
 ]
