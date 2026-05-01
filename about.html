@@ -44,6 +44,15 @@
               "hero-grid":
                 "radial-gradient(1100px 520px at 75% -10%, rgba(34,197,94,0.10) 0%, rgba(34,197,94,0.00) 60%), radial-gradient(850px 420px at -10% 20%, rgba(56,189,248,0.10) 0%, rgba(56,189,248,0.00) 60%)",
             },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            },
           },
         },
       };
@@ -178,14 +187,16 @@
       <div class="absolute inset-0 bg-hero-grid pointer-events-none"></div>
       <div class="mx-auto max-w-7xl px-4 py-14 md:py-20">
         <div class="max-w-3xl">
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-txt-dim">
-            <span class="h-2 w-2 rounded-full bg-pri/80"></span> About NGEE.TOP
-          </span>
-          <h1 class="mt-5 text-4xl md:text-5xl font-semibold">
+          <div class="opacity-0 animate-fade-in-up">
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-txt-dim">
+              <span class="h-2 w-2 rounded-full bg-pri/80"></span> About NGEE.TOP
+            </span>
+          </div>
+          <h1 class="mt-5 text-4xl md:text-5xl font-semibold opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
             A new engine for builders.
           </h1>
-          <p class="mt-4 text-txt-dim">
+          <p class="mt-4 text-txt-dim opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
             We’re building a developer-first platform for sharing useful tools,
             high-quality templates, and meaningful projects that empower the
             community.
@@ -197,7 +208,7 @@
     <!-- Mission -->
     <section class="mx-auto max-w-7xl px-4">
       <div class="grid gap-6 md:grid-cols-2">
-        <div class="rounded-2lg border border-border bg-surface p-6 md:p-8">
+        <div class="rounded-2lg border border-border bg-surface p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5">
           <h2 class="text-2xl font-semibold">Mission</h2>
           <p class="mt-2 text-sm text-txt-dim">
             Empower creators by building useful tools and sharing meaningful
@@ -206,7 +217,7 @@
             real-world problems.
           </p>
         </div>
-        <div class="rounded-2lg border border-border bg-surface p-6 md:p-8">
+        <div class="rounded-2lg border border-border bg-surface p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5">
           <h2 class="text-2xl font-semibold">What we’re building</h2>
           <ul class="mt-3 space-y-2 text-sm text-txt-dim">
             <li>• Curated ecosystem of useful developer tools.</li>
@@ -218,9 +229,9 @@
     </section>
 
     <!-- Story & Values -->
-    <section class="mx-auto max-w-7xl px-4 py-12 md:py-16">
+    <section class="mx-auto max-w-7xl px-4 py-12 md:py-16 reveal-on-scroll opacity-0">
       <div class="grid gap-6 md:grid-cols-2">
-        <div class="rounded-2lg border border-border bg-surface/60 p-6 md:p-8">
+        <div class="rounded-2lg border border-border bg-surface/60 p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5 hover:bg-surface">
           <h3 class="text-xl font-semibold">Our story</h3>
           <p class="mt-2 text-sm text-txt-dim">
             NGEE.TOP started as internal scripts and templates to remove
@@ -229,7 +240,7 @@
             those lessons into a platform.
           </p>
         </div>
-        <div class="rounded-2lg border border-border bg-surface/60 p-6 md:p-8">
+        <div class="rounded-2lg border border-border bg-surface/60 p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5 hover:bg-surface">
           <h3 class="text-xl font-semibold">Values</h3>
           <ul class="mt-2 space-y-2 text-sm text-txt-dim">
             <li><b>Simplicity over knobs.</b> Defaults that work.</li>
@@ -244,23 +255,23 @@
     </section>
 
     <!-- Core Values / Philosophy -->
-    <section class="mx-auto max-w-7xl px-4">
+    <section class="mx-auto max-w-7xl px-4 reveal-on-scroll opacity-0">
       <div class="rounded-2lg border border-border bg-surface p-6 md:p-8">
         <h3 class="text-xl font-semibold">Our core principles</h3>
         <div class="mt-6 grid gap-6 md:grid-cols-3">
-          <div>
+          <div class="transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5 p-4 rounded-xl hover:bg-surface/60 border border-transparent hover:border-border">
             <h4 class="font-semibold text-pri">Utility First</h4>
             <p class="mt-1 text-sm text-txt-dim leading-relaxed">
               We don't build for the sake of building. Every tool or project on NGEE is created to solve a specific problem or provide a clear benefit to someone else.
             </p>
           </div>
-          <div>
+          <div class="transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5 p-4 rounded-xl hover:bg-surface/60 border border-transparent hover:border-border">
             <h4 class="font-semibold text-pri">Public Sharing</h4>
             <p class="mt-1 text-sm text-txt-dim leading-relaxed">
               Knowledge and tools are better when they are out in the open. Our goal is to make as much as possible accessible to the community.
             </p>
           </div>
-          <div>
+          <div class="transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5 p-4 rounded-xl hover:bg-surface/60 border border-transparent hover:border-border">
             <h4 class="font-semibold text-pri">Practical Learning</h4>
             <p class="mt-1 text-sm text-txt-dim leading-relaxed">
               By exploring our shared projects, developers can see real-world implementations and best practices in action, not just theory.
@@ -318,9 +329,9 @@
     </section> -->
 
     <!-- Open Roles / Press -->
-    <section class="mx-auto max-w-7xl px-4 py-12">
+    <section class="mx-auto max-w-7xl px-4 py-12 reveal-on-scroll opacity-0">
       <div class="grid gap-6 md:grid-cols-2">
-        <div class="rounded-2lg border border-border bg-surface/60 p-6">
+        <div class="rounded-2lg border border-border bg-surface/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5 hover:bg-surface">
           <h4 class="font-semibold">Open Roles</h4>
           <p class="mt-2 text-sm text-txt-dim">
             We’ll post openings as we grow. Send a hello with your GitHub &
@@ -329,25 +340,25 @@
           <div class="mt-3">
             <a
               href="contact.html"
-              class="rounded-xl bg-pri px-4 py-2 text-sm font-semibold text-black hover:bg-pri-hover shadow-glow"
+              class="rounded-xl bg-pri px-4 py-2 text-sm font-semibold text-black hover:bg-pri-hover shadow-glow transition-all active:scale-95 inline-block"
               >Contact us</a
             >
           </div>
         </div>
-        <div class="rounded-2lg border border-border bg-surface/60 p-6">
+        <div class="rounded-2lg border border-border bg-surface/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5 hover:bg-surface">
           <h4 class="font-semibold">Press Kit</h4>
           <p class="mt-2 text-sm text-txt-dim">
             Logo, color tokens, and a short brand guide.
           </p>
           <div class="mt-3 flex gap-2">
             <a
-              class="rounded-xl border border-border bg-surface px-4 py-2 text-sm"
+              class="rounded-xl border border-border bg-surface px-4 py-2 text-sm transition-all active:scale-95 inline-block hover:bg-surface/70"
               href="#"
               download
               >Download assets (zip)</a
             >
             <a
-              class="rounded-xl border border-border bg-surface px-4 py-2 text-sm"
+              class="rounded-xl border border-border bg-surface px-4 py-2 text-sm transition-all active:scale-95 inline-block hover:bg-surface/70"
               href="index.html"
               >Brand overview</a
             >
@@ -458,6 +469,21 @@
             panel.classList.add("hidden");
             btn.setAttribute("aria-expanded", "false");
           }
+        });
+
+        // Scroll Animation Observer
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-fade-in-up');
+              entry.target.classList.remove('opacity-0');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+          observer.observe(el);
         });
       })();
     </script>

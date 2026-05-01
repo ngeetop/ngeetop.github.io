@@ -67,6 +67,15 @@
                 "radial-gradient(1200px 600px at 70% -10%, rgba(34,197,94,0.10) 0%, rgba(34,197,94,0.00) 60%), radial-gradient(900px 500px at -10% 20%, rgba(56,189,248,0.10) 0%, rgba(56,189,248,0.00) 60%)",
             },
             borderRadius: { "2lg": "14px" },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            },
           },
         },
       };
@@ -213,21 +222,23 @@
       <div class="absolute inset-0 bg-hero-grid pointer-events-none"></div>
       <div class="mx-auto max-w-7xl px-4 py-20 md:py-28">
         <div class="max-w-3xl">
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-txt-dim">
-            <span class="h-2 w-2 rounded-full bg-pri/80"></span>
-            New-era General Engineering Engine · <span class="mono">TOP</span>
-          </span>
-          <h1 class="mt-6 text-4xl leading-tight font-semibold md:text-6xl">
+          <div class="opacity-0 animate-fade-in-up">
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-txt-dim">
+              <span class="h-2 w-2 rounded-full bg-pri/80"></span>
+              New-era General Engineering Engine · <span class="mono">TOP</span>
+            </span>
+          </div>
+          <h1 class="mt-6 text-4xl leading-tight font-semibold md:text-6xl opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
             Empowering Developers.<br />Built for utility.<br /><span class="text-pri">Shared for everyone.</span>
           </h1>
-          <p class="mt-4 text-lg text-txt-dim md:text-xl">
+          <p class="mt-4 text-lg text-txt-dim md:text-xl opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
             NGEE (New-era General Engineering Engine) is a curated ecosystem for building and sharing <b>Useful Tools</b>, production-ready <b>Templates</b>, and <b>Meaningful Projects</b> to help others build their ideas.
           </p>
-          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
             <a
               href="tools.html"
-              class="inline-flex items-center justify-center gap-2 rounded-2lg bg-pri px-6 py-3 text-base font-semibold text-black hover:bg-pri-hover shadow-glow transition">
+              class="inline-flex items-center justify-center gap-2 rounded-2lg bg-pri px-6 py-3 text-base font-semibold text-black hover:bg-pri-hover shadow-glow transition-all active:scale-95">
               Explore Useful Tools
               <svg
                 viewBox="0 0 24 24"
@@ -240,7 +251,7 @@
             </a>
             <a
               href="projects.html"
-              class="inline-flex items-center justify-center gap-2 rounded-2lg border border-border bg-surface px-6 py-3 text-base hover:bg-surface/70 transition">
+              class="inline-flex items-center justify-center gap-2 rounded-2lg border border-border bg-surface px-6 py-3 text-base hover:bg-surface/70 transition-all active:scale-95">
               View Shared Projects
               <svg
                 viewBox="0 0 24 24"
@@ -253,11 +264,11 @@
             </a>
             <a
               href="#community"
-              class="inline-flex items-center justify-center gap-2 rounded-2lg border border-border bg-surface px-6 py-3 text-base hover:bg-surface/70 transition">
+              class="inline-flex items-center justify-center gap-2 rounded-2lg border border-border bg-surface px-6 py-3 text-base hover:bg-surface/70 transition-all active:scale-95">
               Community
             </a>
           </div>
-          <p class="mt-6 text-sm text-txt-dim mono">
+          <p class="mt-6 text-sm text-txt-dim mono opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
             Engineering, accelerated.
           </p>
         </div>
@@ -278,7 +289,7 @@
       <div class="grid gap-8 md:grid-cols-4">
 
 
-        <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="rounded-2lg border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5">
           <div
             class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-info/10 text-info ring-1 ring-info/20">
             <!-- Tools -->
@@ -297,7 +308,7 @@
           </p>
         </div>
 
-        <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="rounded-2lg border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5">
           <div
             class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-acc/10 text-acc ring-1 ring-acc/20">
             <!-- Projects -->
@@ -317,7 +328,7 @@
           </p>
         </div>
 
-        <div class="rounded-2lg border border-border bg-surface p-6">
+        <div class="rounded-2lg border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pri/5">
           <div
             class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-pri/10 text-pri ring-1 ring-pri/20">
             <!-- Community -->
@@ -385,7 +396,7 @@
     </section>
 
     <!-- ===== Community ===== -->
-    <section id="community" class="mx-auto max-w-7xl px-4 pb-6">
+    <section id="community" class="mx-auto max-w-7xl px-4 pb-6 reveal-on-scroll opacity-0">
       <div class="rounded-2lg border border-border bg-surface/60 p-6 md:p-8">
         <div class="grid gap-8 md:grid-cols-3">
           <div>
@@ -695,7 +706,7 @@
             .join(" ");
           const top = tagPill("TOP", "TOP");
           return `
-          <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+          <article class="rounded-2lg border border-border bg-surface/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:bg-surface hover:shadow-lg hover:shadow-pri/5">
             <div class="flex items-start justify-between gap-2">
               <div>
                 <h3 class="font-semibold">${item.name}</h3>
@@ -756,7 +767,7 @@
 
         function projectCard(p) {
           return `
-          <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+          <article class="rounded-2lg border border-border bg-surface/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:bg-surface hover:shadow-lg hover:shadow-pri/5">
             <div class="flex items-start justify-between gap-3">
               <div>
                 <h3 class="font-semibold">${p.name}</h3>
@@ -862,6 +873,21 @@
             panel.classList.add("hidden");
             btn.setAttribute("aria-expanded", "false");
           }
+        });
+
+        // Scroll Animation Observer
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-fade-in-up');
+              entry.target.classList.remove('opacity-0');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+          observer.observe(el);
         });
       })();
     </script>

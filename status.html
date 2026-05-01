@@ -41,6 +41,15 @@
               glow: "0 0 0 2px rgba(34,197,94,0.14), 0 12px 64px rgba(34,197,94,0.10)",
             },
             borderRadius: { "2lg": "14px" },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            },
           },
         },
       };
@@ -180,14 +189,14 @@
 
     <!-- Header -->
     <section class="mx-auto max-w-7xl px-4 py-10 md:py-16">
-      <h1 class="text-3xl md:text-4xl font-semibold">Status</h1>
-      <p class="mt-2 text-sm text-txt-dim max-w-2xl">
+      <h1 class="text-3xl md:text-4xl font-semibold opacity-0 animate-fade-in-up">Status</h1>
+      <p class="mt-2 text-sm text-txt-dim max-w-2xl opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
         Live uptime & incidents powered by UptimeRobot.
       </p>
     </section>
 
     <!-- Status -->
-    <section class="mx-auto max-w-7xl px-4 pb-20 md:pb-28">
+    <section class="mx-auto max-w-7xl px-4 pb-20 md:pb-28 reveal-on-scroll opacity-0">
       <div class="rounded-2lg border border-border bg-surface p-6 md:p-8">
         <div
           class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
@@ -201,7 +210,7 @@
           <div class="flex items-center gap-2">
             <button
               id="status-refresh"
-              class="rounded-xl border border-border bg-surface px-4 py-2 text-sm hover:bg-surface/70">
+              class="rounded-xl border border-border bg-surface px-4 py-2 text-sm hover:bg-surface/70 transition-all active:scale-95">
               Refresh
             </button>
             <span id="status-updated" class="text-xs text-txt-dim"
@@ -363,7 +372,7 @@
         };
         const typeLabel = typeMap[m.type] || "Unknown";
         return `
-      <article class="rounded-2lg border border-border bg-surface/60 p-5 hover:bg-surface transition">
+      <article class="rounded-2lg border border-border bg-surface/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:bg-surface hover:shadow-lg hover:shadow-pri/5">
         <div class="flex items-start justify-between gap-2">
           <div>
             <h4 class="font-semibold">${
@@ -508,6 +517,21 @@
             panel.classList.add("hidden");
             btn.setAttribute("aria-expanded", "false");
           }
+        });
+
+        // Scroll Animation Observer
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-fade-in-up');
+              entry.target.classList.remove('opacity-0');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+          observer.observe(el);
         });
       })();
     </script>
