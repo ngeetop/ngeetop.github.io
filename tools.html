@@ -68,7 +68,7 @@
       }
       html,
       body {
-        background: #0b1220;
+        background: transparent;
       }
       body {
         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
@@ -82,7 +82,7 @@
     </style>
   </head>
   <body
-    class="bg-bg text-txt antialiased selection:bg-pri/20 selection:text-txt">
+    class="text-txt antialiased selection:bg-pri/20 selection:text-txt">
     <!-- ===== Top Nav ===== -->
     <header
       class="sticky top-0 z-40 border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
@@ -728,5 +728,8 @@
         });
       })();
     </script>
+    
+    <!-- Fluid Background Animation -->
+    <script src="./fluidBackground.js"></script>
   </body>
 </html>
