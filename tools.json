@@ -4,21 +4,13 @@
     "name": "webhook.ngee.top",
     "type": "utility",
     "runtime": "",
-    "tags": ["webhook", "tools"],
+    "tags": [
+      "webhook",
+      "tools"
+    ],
     "desc": "Tools webhook untuk menerima & inspeksi webhook.",
     "url": "https://webhook.ngee.top",
     "repo": "https://github.com/akhmadnuzula/webhook",
     "updated": "2025-10-02"
-  },
-  {
-    "id": 2,
-    "name": "search.ngee.top",
-    "type": "utility",
-    "runtime": "searxng",
-    "tags": ["search", "privacy", "searxng"],
-    "desc": "Mesin pencari privasi (SearXNG metasearch engine).",
-    "url": "https://search.ngee.top",
-    "repo": "",
-    "updated": "2026-03-13"
   }
 ]
