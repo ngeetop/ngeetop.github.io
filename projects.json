@@ -26,5 +26,19 @@
     "repo": "",
     "updated": "2026-03-13",
     "builtOn": true
+  },
+  {
+    "id": 3,
+    "name": "sense.ngee.top",
+    "kind": "app",
+    "runtime": "python",
+    "status": "stable",
+    "tags": ["adsense", "scanner", "utility"],
+    "desc": "NgeeSense - Cek Kelayakan Website Anda untuk AdSense.",
+    "demo": "https://sense.ngee.top",
+    "deploy": "",
+    "repo": "",
+    "updated": "2026-05-13",
+    "builtOn": true
   }
 ]
